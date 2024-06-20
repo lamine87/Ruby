@@ -1,0 +1,8 @@
+<h1>Liste de mes contacts</h1>
+
+<ul>
+    <% for surname, phoneNumber in @friends.keys %>
+        <li> <a href="/contacts/<%= surname %>"> <%= surname %> - <%= phoneNumber %> </li>
+        # <li> <a href="#"></a> </li>
+    <% end %>
+</ul>
