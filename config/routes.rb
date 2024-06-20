@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
 
   root "pages#home"
-  get ':token', to: 'pages#bonus'
-  get 'contact', to: 'pages#contact'
-  get 'login', to: 'pages#login'
+  # get ':token', to: 'pages#bonus'
+  # get 'login', to: 'pages#login'
+
   get 'contacts', to: 'contacts#index'
   get 'contacts/:surname', to: 'contacts#show'
   get 'languages', to: 'languages#index'
-  get 'test', to: 'pages#test'
+  get 'contact', to: 'pages#contact'
+  get 'about', to: 'pages#about'
+  get 'terms', to: 'pages#terms'
+  get 'sign_up', to: 'registrations#new'
+  post 'sign_up', to: 'registrations#create'
+  
+ 
+  
+  # get 'test', to: 'pages#test'
   # get 'friends', to: 'friends#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

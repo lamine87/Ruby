@@ -9,7 +9,9 @@ class PagesController < ApplicationController
 
     def home
         # render('pages/homepage')
-        render 'homepage'
+        # render 'home'
+        flash[:notice] ="Connecté avec succès"
+        flash[:notice] = "Email ou mot de passe invalide"
     end
 
     def bonus
@@ -21,4 +23,13 @@ class PagesController < ApplicationController
         # redirect_to(:controller =>'contacts', :action =>'index')
         redirect_to(:controller =>'pages', :action =>'home')
     end
+    def about
+        @time = Time.now
+        render(:template => 'pages/about')
+    end
+    def terms
+        @time = Time.now
+        render(:template => 'pages/terms')
+    end
+
 end
