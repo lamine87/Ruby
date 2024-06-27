@@ -8,8 +8,7 @@ class PagesController < ApplicationController
     end
 
     def home
-        # render('pages/homepage')
-        # render 'home'
+        @user = User.all
         flash[:notice] ="Connecté avec succès"
         flash[:notice] = "Email ou mot de passe invalide"
     end
@@ -19,8 +18,6 @@ class PagesController < ApplicationController
     end
 
     def login 
-        # redirect_to(:action =>'home')
-        # redirect_to(:controller =>'contacts', :action =>'index')
         redirect_to(:controller =>'pages', :action =>'home')
     end
     def about
